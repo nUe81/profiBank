@@ -1,0 +1,716 @@
+/* Dealing with the Intro */
+.intro {
+  background-color: rgb(109, 193, 210);
+  color: rgb(0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+    z-index: 10;
+    animation: slideAway 2s ease-in-out 2s forwards;
+
+}
+  @keyframes slideAway {
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+.heading {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  top: 7rem;
+
+  font-weight: 300;
+  letter-spacing: 1.3px;
+}
+.welcome {
+  position: relative;
+  right: 15px;
+   font-family:'Courier New', Courier, monospace;
+   font-style: italic;
+   font-size: 5rem;
+}
+
+.aim {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  top: 13rem;
+  letter-spacing: 2px;
+}
+
+.mainHeading {
+  display: flex;
+  justify-content: center;
+
+    font-size: 5rem;
+    font-weight: 100;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+  .bankLogo {
+  width: 90px;  
+  height: auto;
+  margin-left: 8px; 
+}
+
+  /* Div for add and view Profiles */
+.addSpace, .SeeSpace {
+  width: 27%;
+  height: 12rem;
+  background: rgb(109, 193, 210);
+  border: none;
+  position: relative;
+  right: -14rem;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+}
+
+
+.addSpace::before, .SeeSpace::before {
+  content: "";
+  position: absolute;
+  width: 200%;         
+  height: 200%;
+  background: rgb(249, 246, 246);
+  border-radius: 50%;
+  left: -80%;        
+  top: -50%;
+  transition: 1.4s;
+ 
+}
+
+.addSpace:hover::before, .SeeSpace:hover::before {
+  transform: translate(120%, -50%);
+  transition: 1s;
+}
+
+ .SeeSpace {
+  right: -42rem;
+  top: -12.05rem;
+ }
+
+
+ 
+ 
+ 
+ /* buttons */
+.addProfile, .viewProfile {
+  padding: 1rem 1.45rem;
+  border-radius: 2rem;
+  cursor: pointer;
+
+    display: flex;
+    justify-self: center;
+
+    position: relative;
+    top: 3.7rem;
+    transition: all 0.5s ease;
+ }
+  .addProfile:hover, .viewProfile:hover {
+    box-shadow: 0 0 10px #1e1e1e;
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+
+.viewLogo, .addLogo {
+  width: 35px;  
+  height: auto;
+  margin-left: 8px;
+   
+    position: relative;
+    right: 5.65rem;
+ }
+    .viewLogo {right: 6rem;}
+ 
+  
+  .addText, .viewText {
+  position: relative;
+  top: 10px;
+  right: -2.8rem;
+
+    letter-spacing: 1.5px;
+ }
+
+
+
+ /* CREATE PROMT */
+ .createSpace {
+  position: fixed;
+  background-color: rgb(109, 193, 210);
+  border: 1.5px solid rgb(10, 9, 9);
+  border-radius: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  width: 23rem;
+  height: 35rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+ transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+  opacity 0.35s ease-out;
+  z-index: 9999; 
+
+ }
+    .createSpace.open {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+  .createSpace.close {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+
+
+.exitPrompt {
+
+  background-color: rgb(241, 234, 234);
+  border: 1px solid rgb(2, 2, 2);
+  position: relative;
+  right: -20rem;
+  top: 10px;
+  padding: 10px 10px;
+    border-radius: 0 6px 0 0;
+
+}
+
+/* BLUR EFFECT */
+.blur {
+  filter: blur(4px);
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
+   /* inside the CREATE space */
+   .promptHeading, .viewpromptHeading {
+    position: relative;
+    top: -23rem;
+    left: 5rem;
+      font-style: italic;
+      letter-spacing: 2px;
+      color: rgb(10, 10, 10);
+      
+      display: inline-block;
+   }
+    .viewpromptHeading {
+      top: -8.6rem;
+      left: 4.2rem;
+       font-size: 1.5rem;
+    } 
+     
+    .promptLogo, .viewpromptLogo {
+      position: relative;
+      top: 5px;
+        width: 2.3rem;
+    }
+    .viewpromptLogo {
+      width: 2rem;
+    }
+   
+    .name_one {
+    position: relative;
+    top: 5rem;
+    right: 1rem;
+     
+      width: 9rem;
+      border: 1.5px solid rgb(7, 7, 7);
+      border-radius: 6px;
+      color: rgb(40, 39, 39);
+
+   }
+    .name_one::placeholder {
+      letter-spacing: 1px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
+    } 
+
+  .name_two {
+    position: relative;
+    top: 5rem;
+    left: 2rem;
+
+      width: 9rem;
+      border: 1.5px solid rgb(7, 7, 7);
+      border-radius: 6px;
+      color: rgb(40, 39, 39);
+  }
+    .name_two::placeholder {
+      letter-spacing: 1px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+  .Birth {
+    position: relative;
+    left: 6.5rem;
+    top: 6.35rem;
+     
+      width: 9rem;
+      border: 1.5px solid rgb(7, 7, 7);
+      border-radius: 6px;
+      color: rgb(40, 39, 39);
+  }
+
+
+  .email {
+    position: relative;
+    top: 9.5rem;
+    right: 9rem;
+    border: 1.5px solid rgb(7, 7, 7);
+    border-radius: 6px;
+    color: rgb(40, 39, 39);
+  }
+    .email::placeholder {
+      letter-spacing: 1px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+  .Num {
+    position: relative;
+    top: 8.2rem;
+    left: 12rem;
+
+    border: 1.5px solid rgb(7, 7, 7);
+      border-radius: 6px;
+      color: rgb(40, 39, 39);
+  }
+    .Num::placeholder {
+      letter-spacing: 1px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+
+  .user_job {
+    position: relative;
+    right: 5.4rem;
+    top: 11rem;
+     
+     width: 12rem;
+     border: 1.5px solid rgb(7, 7, 7);
+      border-radius: 6px;
+      color: rgb(40, 39, 39);
+     
+  } .user_job::placeholder {
+      letter-spacing: 1px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+  .user_self {
+    position: relative;
+    left: 1.3rem;
+    top: 12rem; 
+
+      width: 20rem;
+      height: 14rem ;
+
+      border: 1.5px solid rgb(7, 7, 7);
+      border-radius: 6px;
+      color: rgb(40, 39, 39);
+  } .user_self::placeholder {
+      letter-spacing: 1px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        text-align: center;
+    }
+
+  .create {
+    position: relative;
+    top: 12.4rem;
+    right: -2.7px;
+
+    border: 1.5px solid rgb(7, 7, 7);
+      border-radius: 6px;
+      color: rgb(40, 39, 39);
+
+      width: 22.7rem;
+      height: 3.7rem;
+      border-radius: 0 0 68px 63px;
+      letter-spacing: 2px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      transition: all 0.8s ease;
+  }
+   .create:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,.18); }
+.create:active { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,.18); }
+
+.create::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  z-index:-1;
+  background:#fff;
+  transition: transform .7s ease, opacity .7s ease;
+}
+
+.create:hover::after {
+  transform: scale(1.25);
+  opacity: 0;
+}
+
+
+
+
+    /* view Prompt  */
+    .viewSpace, .security_prompt {
+  position: fixed;
+  background-color: rgb(109, 193, 210);
+  border: 1.5px solid rgb(10, 9, 9);
+  border-radius: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  width: 20rem;
+  height: 14rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+ transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+  opacity 0.35s ease-out;
+  z-index: 9999; 
+
+ }
+    .viewSpace.openView,.security_prompt.open_security {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+  .viewSpace.closeView {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+ .exitSeePrompt {
+  background-color: rgb(241, 234, 234);
+  border: 1px solid rgb(2, 2, 2);
+  position: relative;
+  right: -7.7rem;
+  top: -8.5rem;
+  padding: 10px 10px;
+  border-radius: 0 6px 0 0;
+ }
+
+
+.name {
+  position: relative;
+  top: 3.7rem;
+  left: 3rem;
+
+  padding: 8px 30px;
+}
+ .name::placeholder, .viewIt::placeholder, .user_password::placeholder {
+    letter-spacing: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ .user_password {
+    position: relative;
+  top: 5.2rem;
+  left: 3rem;
+
+  padding: 8px 30px;
+ }
+ 
+ .viewIt, .final_create {
+  position: relative;
+  top: 6.2rem;
+  left: 7.25px;
+    
+    width: 19rem;
+    height: 2.95rem;
+    border: none;
+    border-radius: 0 0 63px 63px;
+    letter-spacing: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.8s ease;
+ }  
+   .viewIt:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,.18); }
+.viewIt:active { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,.18); }
+
+.viewIt::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  z-index:-1;
+  background:#fff;
+  transition: transform .7s ease, opacity .7s ease;
+}
+ .viewIt:hover::after {
+  transform: scale(1.25);
+  opacity: 0;
+}
+
+
+
+      /* FAKE alert i copied from porject 22 */
+   #fakeAlert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  background: linear-gradient(135deg, #6dc1d2, #74c9e0);
+  color: #ef0b0b;
+  padding: 15px 25px;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.5);
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  font-size: 14px;
+  min-width: 250px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+
+#fakeAlert.show {
+  animation: dropIn 0.4s ease forwards;
+}
+
+#fakeAlert.hide {
+ animation: dropOut 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes dropIn {
+  0% {
+    transform: translateX(-50%) translateY(-150%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-50%) translateY(50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(20%);
+    opacity: 1;
+  }
+}
+
+@keyframes dropOut {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-150%);
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.blurr {
+  filter: blur(4px);
+  transition: filter 0.4s ease;
+}
+
+
+
+
+
+.security_intro {
+  position: relative;
+  top: -1rem;
+  left: 6.2rem;
+  display: inline-block;
+
+  color: white;
+  letter-spacing: 1px;
+}
+
+.makeUsername , .makePassword{
+  position: relative;
+  left: 2.4rem;
+  top: -1rem;
+  width: 15rem;
+  height: 1.5rem;
+} 
+.makePassword {
+  top: 0.7rem;
+  height: 1.7rem;
+}
+.makeUsername::placeholder, .makePassword::placeholder {
+  letter-spacing: 1.5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+   
+
+.final_create {
+  top: 1.87rem;
+}
+
+.go_back {
+  position: relative;
+  left: 17.1rem;
+  top: -11rem;
+  border: none;
+
+    padding: 10px 10px;
+  
+     
+}
+
+.check_key::placeholder {
+  color: #ef0b0b;
+  letter-spacing: 0.7px;
+}
+
+.final_view {
+    position: fixed;
+  background-color: rgb(109, 193, 210);
+  border: 1.5px solid rgb(10, 9, 9);
+  border-radius: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  width: 40rem;
+  height: 29rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+ transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+  opacity 0.35s ease-out;
+  z-index: 9999; 
+}
+
+.final_view.open_finalView {
+   transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.userPic {
+  width: 12rem;
+  height: 10rem;
+  background-color: transparent;
+
+  position: relative;
+  left: 2rem;
+  top: 1rem;
+}
+.viewdisplay {
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 20px;
+  position: relative;
+  top: -4rem;
+  left: 17rem;
+
+    width: 22rem;
+    height: 20rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.displayT {
+  width: 14rem;
+  height: 11rem;
+  position: relative;
+  top: -17rem;
+  left: 0.5rem;
+
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  color: #000000;
+  overflow-y: auto; 
+}
+
+.displayT p {
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+   line-height: 1.3rem;
+}
+
+.displayT strong {
+  color: rgb(109, 193, 210);
+}
+
+
+.last_intro {
+  color: #fafafa;
+  font-size: 2rem;
+
+  position: relative;
+  top: -43.8rem;
+  left: 14rem;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+
+.log_out {
+  background: rgb(109, 193, 210);
+  color: rgb(5, 4, 4);
+  font-family: inherit;
+  padding: 0.35em 3.3em 0.35em 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: 1px solid white;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  cursor: pointer;
+}
+
+.log_out .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.log_out:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.log_out .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #bea5e2;
+}
+
+.log_out:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.log_out:active .icon {
+  transform: scale(0.95);
+}
+
+/* Positioning your button */
+.log_out {
+  top: -47.4rem;
+  left: 30.3rem;
+}
+
+
