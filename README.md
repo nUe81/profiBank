@@ -38,7 +38,7 @@ Create a personal profile with:
 # FILES INCLUDE
   index.html
   style.css
-  main.js (your JavaScript file)
+  script.js (JavaScript file)
 
   *Images:
     exit.png
